@@ -9,7 +9,7 @@ VST plugins, realtime signal processing and video art.
 
 VST3 and Mac only for now. This is donation-ware, please support development if you use this in your production or you would like to see features get implemented.
 
-Usage: the higher the volume of the input, more folded is the resulting waveform.   
+Usage: the higher the volume of the input, more folded is the resulting waveform. Tips: use parallel processing, pre/post filtering and reverb.    
 
 Demo video coming soon!
 

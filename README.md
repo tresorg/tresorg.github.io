@@ -1,2 +1,6 @@
-# tresorg.github.io
-tresorg site
+# tresorg 
+
+VST plugins, realtime signal processing and video art.
+
+
+

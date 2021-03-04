@@ -1,6 +1,4 @@
-# Tresorg 
-
-Signal processing tools. 
+# Tresorg - signal processing tools 
 
 
 ### Noisy - folded distortion
@@ -20,5 +18,6 @@ Demo video coming soon.
  
 ### Projects
 
-A collection of [current and past projects](https://aleksand.me)
+A collection of [current and past projects](https://aleksand.me).
+
 

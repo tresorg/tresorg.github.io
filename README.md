@@ -1,6 +1,6 @@
-# tresorg 
+# Tresorg 
 
-VST plugins, realtime signal processing and video art.
+Signal processing tools. 
 
 
 ### Noisy - folded distortion
@@ -18,3 +18,7 @@ Demo video coming soon.
 [Sponsor Tresorg VST development](https://www.paypal.com/donate?hosted_button_id=Q8C6DC6VXSEXE) 
  
  
+### Projects
+
+A collection of [current and past projects](https://aleksand.me)
+

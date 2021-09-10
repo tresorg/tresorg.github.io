@@ -1,5 +1,10 @@
 # Tresorg - signal processing tools 
 
+### Rhythm Generator
+
+A new rhythmic generator prototype: [christoffel rhythm generator](https://visualex.github.io/rhythms/christoffel.html)
+
+This will be ported to VST and (hopefully) to a hardware version :)  
 
 ### Noisy - folded distortion
 

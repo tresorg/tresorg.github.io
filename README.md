@@ -18,7 +18,7 @@ Demo video coming soon.
 
 [Feature requests](https://github.com/tresorg/tresorg.github.io/issues) are welcome! 
 
-[Sponsor Tresorg VST development](https://www.paypal.com/donate?hosted_button_id=Q8C6DC6VXSEXE) 
+[Sponsor Tresorg VST development](https://buy.stripe.com/9AQfZt4B6frAeUUaEE) 
  
  
 ### Projects

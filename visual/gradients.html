@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        .bg {position: absolute; left: 0; right: 0; bottom: 0; top: 0;}
+        .bg {background-image: linear-gradient(to bottom right, green, black);}
+        .bg {z-index: 0;}
+        .tools {z-index: 1;}
+        .tools {position: absolute; left: 0; top: 0;}
+    </style>
+    <script type="text/javascript">
+        var makeGradientStyle = function(){
+            var gradientString = '\
+                /* Mozilla Firefox */ \
+                background-image: -moz-linear-gradient({direction}, {colour1} 0%, {colour2} 100%);\
+                /* Opera */ \
+                background-image: -o-linear-gradient({direction}, {colour1} 0%, {colour2} 100%);\
+                /* Webkit (Safari/Chrome 10) */ \
+                background-image: -webkit-gradient(linear, {direction}, left bottom, color-stop(0, {colour1}), color-stop(1, {colour2}));\
+                /* Webkit (Chrome 11+) */ \
+                background-image: -webkit-linear-gradient({direction}, {colour1} 0%, {colour2} 100%);\
+                /* IE10+ */\
+                background: -ms-linear-gradient({direction},  {colour1} 0%,{colour2} 100%);\
+                /* W3C */\
+                background: linear-gradient({direction},  {colour1} 0%,{colour2} 100%);\
+            ';
+
+            return function(direction, colour1, colour2){
+                return gradientString.replace(/\{colour1\}/g, colour1).replace(/\{colour2\}/g, colour2).replace(/\{direction\}/g, direction);
+            }
+        }();
+
+        function makeGradient() {
+            var p = document.getElementById('bg');
+            p.setAttribute('style', p.getAttribute('style') + '; ' + makeGradientStyle(document.getElementById('r').value + 'deg', document.getElementById('c1').value, document.getElementById('c2').value));
+        }
+
+    </script>
+</head>
+<body>
+<div class="tools">
+    <input id="c1" type="color" value="#FFF123" onchange="makeGradient()"/>
+    <input id="c2" type="color" value="#FFF321" onchange="makeGradient()"/>
+    <input type="range" id="r" min="0" max="360" onchange="makeGradient()"/>
+</div>    
+<div class="bg" id="bg"></div>
+</body>
+</html>

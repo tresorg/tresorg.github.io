@@ -23,6 +23,27 @@ Demo video coming soon.
  
 ### Projects
 
-A collection of [current and past projects](https://aleksand.me).
+Vulkana, big thanks to TeslaFM
+https://www.mixcloud.com/Teslafm_net/rizoma-2-vulkana/
+
+Score for Incubus
+https://www.youtube.com/watch?v=55WzJI5rNCI
+
+Music Needs no Heroes
+https://aleksandrtresorg.bandcamp.com/album/music-needs-no-heroes
+
+Lowveld
+https://lowveld.bandcamp.com/
+
+Dvoinoi
+https://dvoinoi.bandcamp.com/
+
+Score for Visitor
+https://www.youtube.com/watch?v=muwSrBtlDGk
+
+Score for Pretzel
+https://vimeo.com/107710643
+
+
 
 

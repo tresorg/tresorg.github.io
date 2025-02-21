@@ -1,7 +1,7 @@
 ---
 title: About
 author: Alexander Bogdanov
-date: 2025
+date: 2025-02-21
 category: Software Engineering
 layout: post
 ---

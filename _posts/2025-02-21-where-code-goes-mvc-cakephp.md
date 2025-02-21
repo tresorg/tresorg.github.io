@@ -1,9 +1,11 @@
-# where to put your code
-## ... and what code to put where
-
-*2025-02-21*
-
-### Tags: MVC, Architecture, CakePHP
+---
+title: where to put your code ... and what code to put where
+author: Alexander Bogdanov
+date: 2025-02-21
+category: MVC, recipies, architecture, cakephp
+layout: post
+# cover: https://sighingnow.github.io/jekyll-gitbook/assets/dinosaur.gif
+---
 
 Code is different depending on what we're talking about, if we're parsing a string this is low-level, but if we're calling a model for a result-set this is high-level, where does business logic go? I get asked this a lot so here is what we can apply to any MVC framework.
 

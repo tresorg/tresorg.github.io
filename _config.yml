@@ -2,9 +2,9 @@
 title:            Tresorg
 longtitle:        I write code that writes music
 author:           Alexander Bogdanov
-email:            
+email:
 description: >
-  Thoughts on software engineering, combinatorics, AI, signal processing
+  Thoughts on software engineering
 
 version:          1.0
 gitbook_version:  3.2.3
@@ -22,7 +22,7 @@ toc:
   h_max:   3
 
 # customize the link favicon in header, will be {{site.baseurl}}/{{site.favicon_path}}
-# favicon_path:     /assets/gitbook/images/favicon.ico
+favicon_path:     /assets/gitbook/images/favicon.ico
 
 # markdown render engine.
 markdown:         kramdown
@@ -62,7 +62,7 @@ ordered_collections:
   - pages
   - others
 
-page_width: 900px
+page_width: 800px
 
 destination:      ./_site
 incremental:      false
@@ -72,7 +72,3 @@ plugins:
   - jekyll-feed
   - jekyll-readme-index
   - jemoji
-  - jekyll-remote-theme # add this line to the plugins list if you already have one  
-
-
-

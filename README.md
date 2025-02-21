@@ -1,1 +1,1 @@
-thougts and ideas on software engineering, combinatorics, signal processing and complex systems
+thoughts and ideas on software engineering, combinatorics, signal processing and complex systems

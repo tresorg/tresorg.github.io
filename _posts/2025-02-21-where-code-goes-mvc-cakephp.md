@@ -1,8 +1,8 @@
 ---
-title: where to put your code ... and what code to put where
+title: where to put your code and what code to put where
 author: Alexander Bogdanov
 date: 2025-02-21
-category: MVC, recipies, architecture, cakephp
+category: architecture
 layout: post
 # cover: https://sighingnow.github.io/jekyll-gitbook/assets/dinosaur.gif
 ---
@@ -11,7 +11,7 @@ Code is different depending on what we're talking about, if we're parsing a stri
 
 The general idea is: Models = fat, Controllers = thin, Views = fat. Fat means lots of details and business logic. Business logic are decisions you make over how your app behaves. Thin does not mean few lines of code, thin means high level code with few decisions.
 
-For my web projects I use CakePHP, a "convention over configuration" approach to build sites fast. 
+For web oriented projects I use CakePHP, a "convention over configuration" approach to build sites fast. 
 
 ```
 config/

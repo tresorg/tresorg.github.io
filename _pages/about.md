@@ -1,5 +1,5 @@
 ---
-title: About
+title: Projects
 author: Alexander Bogdanov
 date: 2025-02-21
 category: projects
@@ -7,6 +7,8 @@ layout: post
 ---
 
 ### Current Projects
+
+[Permanent Audio installation Folk Museum Artea](https://www.youtube.com/watch?v=lk3jgSWrkro)
 
 [Lowveld](https://lowveld.bandcamp.com/)
 

@@ -8,11 +8,11 @@ layout: post
 
 ### Current Projects
 
-[Permanent Audio installation Folk Museum Artea](https://www.youtube.com/watch?v=lk3jgSWrkro)
-
 [Lowveld](https://lowveld.bandcamp.com/)
 
 [Dvoinoi](https://dvoinoi.com/)
+
+[Permanent Audio installation - Folk Museum Artea](https://www.youtube.com/watch?v=lk3jgSWrkro)
 
 ### Radio/Podcasts 
 

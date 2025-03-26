@@ -30,8 +30,6 @@ layout: post
 
 ### Past Albums
 
-[Music Needs no Heroes](https://aleksandrtresorg.bandcamp.com/album/music-needs-no-heroes)
-
 [Adok](https://dvoinoi.bandcamp.com/album/adok)
 
 [Unit](https://eclecticreactionsrecords.bandcamp.com/album/er043-dvoinoi-unit)

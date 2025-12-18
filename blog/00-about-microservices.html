@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>Do You Really Need Microservices? | Tresorg</title>
+    <link rel="stylesheet" href="../assets/pico.fluid.classless.red.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+    <style>
+        article.blog-content { box-shadow: none; }
+        article.blog-content h2 { font-size: 2rem; margin-top: 0; margin-bottom: 1.5rem; }
+        article.blog-content h3 { font-size: 1.3rem; margin-top: 2rem; }
+        article.blog-content p { line-height: 1.8; margin-bottom: 1.25rem; }
+        nav.breadcrumb { margin-bottom: 2rem; font-size: 0.85rem; opacity: 0.7; }
+        nav.breadcrumb a { text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav class="breadcrumb">
+        <a href="/">Tresorg</a> / <a href="/blog/">Field Notes</a> / Do You Really Need Microservices?
+    </nav>
+
+    <article class="blog-content">
+        <h2>Do You Really Need Microservices?</h2>
+
+        <p>
+            Microservices emerged as a software architecture style in the early 2010s. Although the concept of breaking down applications into smaller, loosely coupled services can be traced back to earlier practices, such as SOA (Service-Oriented Architecture) from the 2000s, microservices gained significant popularity following key publications and case studies. In 2014, Martin Fowler and James Lewis published their influential article "<a href="https://martinfowler.com/articles/microservices.html">Microservices</a>," articulating the principles of microservices as an evolution of SOA with a focus on independently deployable services, decentralized data management, and technology diversity. Around the same time, large tech companies such as <a href="https://www.f5.com/company/blog/nginx/microservices-at-netflix-architectural-best-practices">Netflix</a> and <a href="https://thenewstack.io/led-amazon-microservices-architecture/">Amazon</a> publicly described their successful implementations of microservices, further solidifying the architecture's relevance in modern software development.
+        </p>
+
+        <p>
+            Since then, microservices have been widely adopted and are often seen as the default choice for modern systems, especially in startups. They promise independent deployments, team autonomy, and flexible scaling. The prevailing mindset in many startups is "we need to scale," but this expectation is often unrealistic for systems that may never reach the scale that would justify the complexity. In the right context, those benefits are real. Still, a growing number of teams are finding that microservices introduce more complexity than their systems actually require.
+        </p>
+
+        <p>
+            This has led to a noticeable shift in how teams think about architecture. Rather than asking how quickly they can move to microservices, many are stepping back and asking whether they are needed at all.
+        </p>
+
+        <h3>Where microservices can make sense</h3>
+
+        <p>
+            Microservices tend to work best when systems are large, domains are clearly separated, and teams can own services end to end. They can be effective when different parts of a system truly need to scale independently or evolve at different speeds. These conditions do exist, but they are less common than architecture diagrams might suggest.
+        </p>
+
+        <p>
+            Outside of those scenarios, the overhead of distributed systems can become a burden. Network calls replace simple function calls, data consistency becomes harder, and day-to-day development often slows as the number of services grows.
+        </p>
+
+        <h3>What happens in practice</h3>
+
+        <p>
+            A well-known example comes from Amazon Prime Video. In March 2023, their engineering team published a case study about their video quality monitoring service, which analyzes every stream in real time for defects. The original system was built using AWS Step Functions and Lambda—a distributed, serverless architecture that relied on orchestration across multiple components.
+        </p>
+
+        <p>
+            The team encountered hard scaling limits at around 5 percent of expected load. The orchestration overhead and the cost of moving data between components through S3 made the system impractical at scale. By consolidating the workflow into a single process running on EC2 and ECS, they reduced infrastructure costs by over 90 percent and eliminated the scaling bottleneck.
+        </p>
+
+        <p>
+            It is worth noting that this change applied specifically to the monitoring pipeline, not to Prime Video's streaming infrastructure as a whole. The case also sparked debate in the community. Some argued that moving from a distributed serverless system to a single-process application on dedicated compute was not a true shift from microservices to monolith, but rather a pragmatic correction of an overly distributed design. The original blog post was later removed by Amazon, though it remains widely archived and cited.
+        </p>
+
+        <p>
+            The key lesson was not that microservices were "wrong," but that the system did not benefit from being split apart in that particular way. Keeping the workflow in one place made it easier to reason about, easier to operate, and cheaper to run.
+        </p>
+
+        <p>
+            Reference:
+            <a href="https://www.toddpigram.com/2025/11/you-want-microservices-but-do-you.html">
+                Amazon Prime Video architecture case
+            </a>
+            (<a href="https://web.archive.org/web/20230505213415/https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring-service-and-reducing-costs-by-90">archived original</a>)
+        </p>
+
+        <p>
+            Twilio Segment reached a similar conclusion. Their event delivery system grew to more than 140 microservices, each handling different integrations. While this offered isolation in theory, in practice it created operational drag. Developers spent large amounts of time managing repositories, deployments, and failures across services.
+        </p>
+
+        <p>
+            Eventually, the team merged those services back into a single codebase and deployment. Testing became faster, operational load decreased, and developer productivity improved. Some trade-offs remained, but the overall system was easier to work with and maintain.
+        </p>
+
+        <p>
+            Reference:
+            <a href="https://www.twilio.com/en-us/blog/developers/best-practices/goodbye-microservices">
+                Twilio Segment: Goodbye, Microservices
+            </a>
+        </p>
+
+        <h3>The quiet return of the modular monolith</h3>
+
+        <p>
+            These stories help explain why modular monoliths are becoming more common. A modular monolith keeps a system as a single deployable application, but enforces strong internal boundaries. Code is organized into modules with clear responsibilities and well-defined interfaces, while remaining in the same process.
+        </p>
+
+        <p>
+            This approach avoids many of the costs associated with microservices. There is no network overhead between modules, no need for service discovery, and no distributed data consistency problems. At the same time, developers still get structure and separation inside the codebase.
+        </p>
+
+        <p>
+            For many teams, this strikes a practical balance. It allows systems to grow in complexity without immediately paying the operational cost of distribution. If a module later needs to be split into its own service, the boundaries are already in place.
+        </p>
+
+        <p>
+            Research and industry experience both suggest that decomposing systems into services is difficult to get right and often introduces new challenges alongside the intended benefits.
+        </p>
+
+        <p>
+            Reference:
+            <a href="https://arxiv.org/abs/1807.10059">
+                To Microservices or Not to Microservices?
+            </a>
+        </p>
+
+        <h3>Infrastructure and cost considerations</h3>
+
+        <p>
+            Architecture choices also have financial consequences. Microservices often pair naturally with managed services from large cloud providers. While convenient, this combination can become expensive, especially as the number of services and internal traffic increases.
+        </p>
+
+        <p>
+            In contrast, many teams find that running containerized applications on virtual machines with a smaller provider is both manageable and cost-effective. Tools like Kubernetes or Docker Swarm are mature and well understood. For teams comfortable with infrastructure, operating their own clusters can be simpler than managing a complex web of managed cloud services.
+        </p>
+
+        <h3>Choosing what fits</h3>
+
+        <p>
+            There is no single "correct" architecture. Microservices are useful in some contexts, but they are not a requirement for building scalable or maintainable systems. Modular monoliths offer a clear, practical alternative that works well for many teams and products.
+        </p>
+
+        <p>
+            Starting with a simple, well-structured system and introducing complexity only when it is clearly justified remains a sound approach. In many cases, staying monolithic longer turns out to be the easier path to maintainability, performance, and predictable costs.
+        </p>
+
+        <p>
+            Additional reference:
+            <a href="https://www.docker.com/blog/do-you-really-need-microservices/">
+                Docker: Do You Really Need Microservices?
+            </a>
+        </p>
+    </article>
+
+    <footer>
+        <small>
+            &copy; 2025 Tresorg. <a href="/">Back to home</a>
+        </small>
+    </footer>
+</body>
+</html>
